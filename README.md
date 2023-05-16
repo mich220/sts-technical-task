@@ -68,5 +68,7 @@ REST API:
 - POST http://localhost/api/v1/account/{accountId}/wallet
 - GET http://localhost/api/v1/account/{accountId}/wallet/{walletId}
 - PUT http://localhost/api/v1/account/{accountId}/wallet/{walletId}/deposit
+  - body: {"amount": integer}
 - PUT http://localhost/api/v1/account/{accountId}/wallet/{walletId}/withdraw
+  - body: {"amount": integer}
 
