@@ -49,7 +49,7 @@ docker-compose build
 docker-compose up -d
 docker-compose run sts-php bash
 or
-docker-compose exec sts-php bash
+docker-compose exec -it sts-php bash
 ```
 
 final project steps inside of docker container:
