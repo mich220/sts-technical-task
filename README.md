@@ -47,7 +47,7 @@ then prepare docker environment:
 ```
 docker-compose build
 docker-compose up -d
-docker-compose run php bash
+docker-compose run sts-php bash
 ```
 
 final project steps inside of docker container:
