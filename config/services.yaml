@@ -1,0 +1,15 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    App\Shared\:
+        resource: '%kernel.project_dir%/src/Shared/*'
+        exclude: '%kernel.project_dir%/src/Shared/{Repository,Controller}'
+        autoconfigure: true
+        autowire: true
+
+imports:
+    - { resource: 'module/*/*.yaml' }

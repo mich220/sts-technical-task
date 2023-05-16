@@ -1,0 +1,28 @@
+services:
+  App\Wallet\:
+    resource: '%kernel.project_dir%/src/Wallet/*'
+    exclude:
+      - '%kernel.project_dir%/src/Wallet/Application/{Message}'
+      - '%kernel.project_dir%/src/Wallet/Domain/{Enum,ValueObject,Specification}'
+    public: true
+    autoconfigure: true
+    autowire: true
+
+  App\Wallet\UI\Controller\:
+    resource: '%kernel.project_dir%/src/Wallet/UI/Controller/*'
+    tags: ['controller.service_arguments']
+    autoconfigure: true
+    autowire: true
+
+  App\Wallet\Domain\Repository\WalletRepositoryInterface:
+    alias: App\Wallet\Infrastructure\Repository\Doctrine\WalletRepository
+
+  App\Wallet\Domain\Repository\BankAccountRepositoryInterface:
+    alias: App\Wallet\Infrastructure\Repository\Doctrine\BankAccountRepository
+
+  App\Wallet\Infrastructure\Repository\Csv\CsvTransactionHistoryRepository:
+    arguments:
+      $csvFilePath: '%kernel.project_dir%/var/generated'
+    public: true
+    autoconfigure: true
+    autowire: true

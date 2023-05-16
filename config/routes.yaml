@@ -1,0 +1,5 @@
+wallet_controllers:
+    resource:
+        path: ../src/Wallet/UI/Controller/
+        namespace: App\Wallet\UI\Controller
+    type: attribute
